@@ -16,6 +16,7 @@ export default defineConfig({
       "@config" : "/src/config",
       "@screens" : "/src/screens",
       "@store": "/src/store",
+      "@common": "/src/components/common",
     }
   }
 })

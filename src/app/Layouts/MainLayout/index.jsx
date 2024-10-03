@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from '@components/common/Header'
 
-const MainLayout = () => {
+const Navbar = () => {
   return (
-    <div>MainLayout</div>
+    <div></div>
   )
 }
 
-export default MainLayout
+export default Navbar

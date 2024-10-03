@@ -1,15 +1,13 @@
+import MainTop from "@components/Landing/MainTop";
 import "./App.css";
+import Header from "@components/common/Header";
 
-function App() {
+const App = () => {
   
   return (
-    <>
       <div>
-        <h1 className="text-3xl font-bold underline bg-green-500">
-          hello test
-        </h1>
+        <MainTop/>
       </div>
-    </>
   );
 }
 
