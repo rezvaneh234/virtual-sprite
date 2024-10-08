@@ -1,8 +1,8 @@
 import React from "react";
+import { Formik, Form, Field } from "formik";
+import exit from "@assets/images/exit.png";
 
 const Login = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <div class="w-screen h-screen bg-slate-400 max-w-full relative">
       <div class="mx-auto w-[420px] h-[490px] bg-white rounded-[24px] absolute top-[100px] inset-0">
@@ -16,7 +16,7 @@ const Login = () => {
         </div>
         <Formik
           initialValues={{
-            acceptedTerms: false, // مقدار پیش‌فرض چک‌باکس
+            acceptedTerms: false, 
           }}
         >
           {({ values }) => (
