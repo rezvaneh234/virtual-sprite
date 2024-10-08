@@ -4,7 +4,10 @@ import exit from "@assets/images/exit.png";
 
 const Login = () => {
   return (
-    <div class="w-screen h-screen bg-slate-400 max-w-full relative">
+    <div
+      class="w-screen h-screen bg-slate-400 max-w-full relative"
+      className="dirAuth"
+    >
       <div class="mx-auto w-[420px] h-[490px] bg-white rounded-[24px] absolute top-[100px] inset-0">
         <div class="flex flex-row justify-between px-6 my-5">
           <div class="text-[#263238] flex flex-row justify-center items-center leading-[49.6px] text-[32px] text-right">
@@ -16,7 +19,7 @@ const Login = () => {
         </div>
         <Formik
           initialValues={{
-            acceptedTerms: false, 
+            acceptedTerms: false,
           }}
         >
           {({ values }) => (

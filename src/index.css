@@ -26,11 +26,15 @@ a:hover {
 }
 
 body {
+ background-color: #747bff;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+.dirAuth{
+  direction: rtl;
 }
 
 h1 {
