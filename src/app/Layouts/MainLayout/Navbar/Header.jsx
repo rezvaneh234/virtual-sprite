@@ -1,7 +1,8 @@
 import React from 'react'
 import sabad from "@assets/images/header/sabad.png"
-import hexa from "@assets/images/header/hexa.png"
+import hexa from '@assets/images/header/hexa.png'
 import { useState } from 'react'
+import Btn from '@components/common/Btn'
 
 const Header = () => {
 
@@ -16,8 +17,9 @@ const Header = () => {
 
     return (
         <div class="container mx-auto flex justify-between items-center bg-transparent">
-            <div>
-                <img src={hexa} class="w-40 h-10  mr-12" />
+            <div class="flex gap-1 mr-12 items-center ">
+                <img src={hexa} class="w-[43px] h-[30px]" />
+                <h2 class='text-[#263238] text-[20px] font-bold ' >Virtual Sprite</h2>
             </div>
             <ul class="flex gap-10 items-center ">
                 {hList.map((item, index) => {
@@ -27,8 +29,8 @@ const Header = () => {
                 })}
             </ul>
             <div class="flex gap-4 ml-12">
-                <img src={sabad} class=" h-20 w-20" />
-                <button class="bg-[#2196F3] text-white px-4 py-2 rounded-full my-3">ورود به حساب</button>
+                {/* <img src={sabad} class=" h-20 w-20" /> */}
+                <Btn insideText= {"ورود به حساب"} />
             </div>
         </div>
     )

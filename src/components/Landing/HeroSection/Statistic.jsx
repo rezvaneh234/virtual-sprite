@@ -1,9 +1,10 @@
 import React from 'react'
-import right from '@assets/images/mainTop/1.png'
-import mid from '@assets/images/mainTop/2.png'
-import left from '@assets/images/mainTop/3.png'
+import right from '@assets/images/HeroSection/1.png'
+import mid from '@assets/images/HeroSection/2.png'
+import left from '@assets/images/HeroSection/3.png'
 import AmarItem from './AmarItem'
 import { useState } from 'react'
+import HeroSection from './HeroSection';
 
 const Statistic = () => {
     const [amar, setAmar] = useState(
@@ -14,7 +15,7 @@ const Statistic = () => {
         ]
     );
     return (
-        <div class='flex justify-center gap-8 mb-32' > {amar.map((item, index) => {
+        <div class='flex justify-center gap-8 mb-14' > {amar.map((item, index) => {
             return <AmarItem
                 key={index}
                 img= {item.img}
