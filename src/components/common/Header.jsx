@@ -15,7 +15,7 @@ const Header = () => {
     );
 
     return (
-        <div class="container mx-auto flex justify-between items-center absolute inset-x-0 top-8 bg-transparent">
+        <div class="container mx-auto flex justify-between items-center bg-transparent">
             <div>
                 <img src={hexa} class="w-40 h-10  mr-12" />
             </div>

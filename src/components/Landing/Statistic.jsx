@@ -14,7 +14,7 @@ const Statistic = () => {
         ]
     );
     return (
-        <div class='flex justify-center gap-8 ' > {amar.map((item, index) => {
+        <div class='flex justify-center gap-8 mb-32' > {amar.map((item, index) => {
             return <AmarItem
                 key={index}
                 img= {item.img}
