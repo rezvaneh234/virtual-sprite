@@ -1,5 +1,5 @@
 import "./App.css";
-
+import Login from "@components/Auth/Login";
 function App() {
   
   return (
@@ -8,6 +8,7 @@ function App() {
         <h1 className="text-3xl font-bold underline bg-green-500">
           Test
         </h1>
+        {/* <Login/> */}
       </div>
     </>
   );
