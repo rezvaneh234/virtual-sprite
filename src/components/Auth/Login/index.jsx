@@ -4,10 +4,7 @@ import exit from "@assets/images/exit.png";
 
 const Login = () => {
   return (
-    <div
-      class="w-screen h-screen bg-slate-400 max-w-full relative"
-      className="dirAuth"
-    >
+    <>
       <div class="mx-auto w-[420px] h-[490px] bg-white rounded-[24px] absolute top-[100px] inset-0">
         <div class="flex flex-row justify-between px-6 my-5">
           <div class="text-[#263238] flex flex-row justify-center items-center leading-[49.6px] text-[32px] text-right">
@@ -44,12 +41,8 @@ const Login = () => {
                       name="acceptedTerms"
                       id="show"
                       className="checkBox"
-                      //   class="h-5 w-5 text-red-600 bg-gray-600 border-gray-300  hover:bg-violet-600
-                      //  rounded focus:ring-yellow-500 focus:ring-2 "
                     />
-                    {/* {`${values.acceptedTerms}`} */}
                     <label htmlFor="show"> من را به خاطر بسپار </label>
-                    {/* <label htmlFor="show"> خالی</label> */}
                   </div>
                   <div>
                     {/* <NavLink to="#">رمز عبور را فراموش کردم</NavLink> */}
@@ -81,7 +74,7 @@ const Login = () => {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
