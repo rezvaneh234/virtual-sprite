@@ -1,8 +1,8 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import exit from "@assets/images/exit.png";
-import TelField from "../TelField";
-const ConfirmCode = () => {
+import TelField from "../../TelField"
+const SendSms = () => {
   return (
     <>
       <div class="mx-auto w-[420px] h-[483px] bg-white rounded-[24px] absolute top-[100px] inset-0">
@@ -61,4 +61,5 @@ const ConfirmCode = () => {
   );
 };
 
-export default ConfirmCode;
+
+export default SendSms

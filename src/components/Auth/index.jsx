@@ -1,16 +1,18 @@
 import React from "react";
 import Login from "./Login";
 import Register from "./Register";
-import ConfirmCode from "./ConfirmCode";
+import RegisterFinish from "./Register/RegisterFinish";
+import SendSms from "./Register/SendSms";
 const Auth = () => {
   return (
     <div
       class="w-screen h-screen bg-slate-400 max-w-full relative"
       className="dirAuth"
     >
-      <ConfirmCode />
+      {/* <SendSms/> */}
       {/* <Login /> */}
       {/* <Register /> */}
+      <RegisterFinish />
     </div>
   );
 };
