@@ -14,7 +14,7 @@ const ConfirmCode = () => {
             <img class="w-6 h-6" src={exit}></img>
           </div>
         </div>
-        <div class=" text-[14px] px-7 my-9 ">
+        <div class=" text-[14px] px-10 my-9 text-right">
           <label>
             کد به شماره 0911 ارسال شد. در صورت اشتباه بودن شماره آن را
           </label>
