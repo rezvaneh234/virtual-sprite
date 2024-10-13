@@ -37,7 +37,7 @@ const Login = () => {
         </div>
         <Formik
           initialValues={{
-            acceptedTerms: true,
+            acceptedTerms: true
           }}
         >
           {({ values }) => (
@@ -76,8 +76,8 @@ const Login = () => {
               <div class="mt-[35px]">
                 <button
                   onClick={() => {
-                    getProfileFunc()
-                    // loginUser()
+                    // getProfileFunc()
+                    loginUser()
                   }}
                   type="submit"
                   class="m-[15px] w-[208px] h-[56px] bg-[#2196F3] text-[rgba(255,255,255,1)] rounded-[80px]
