@@ -1,10 +1,31 @@
 import React from "react";
+import axios from "axios";
 import { Formik, Form, Field } from "formik";
 import exit from "@assets/images/exit.png";
+import { useEffect } from "react";
+import { loginAPI } from "@core/services/api/auth/auth";
+import { NavLink } from "react-router-dom";
+import { setItem } from "../../common/storage.services";
+import { getProfile } from "../../../core/services/api/user/user";
 
 const Login = () => {
+  const loginUser = async () => {
+    const userObj = {
+      phoneOrGmail: "masg1377@gmail.com",
+      password: "123456",
+      rememberMe: true,
+    };
+    const user = await loginAPI(userObj);
+    console.log(user.token);
+    setItem("token", user.token);
+  };
+  const getProfileFunc = async () => {
+    const user = await getProfile();
+    console.log(user);
+  };
+  // useEffect(()=>{loginUser()},[])
   return (
-    <>
+    <div className="dirAuth">
       <div class="mx-auto w-[420px] h-[490px] bg-white rounded-[24px] absolute top-[100px] inset-0">
         <div class="flex flex-row justify-between px-6 my-5">
           <div class="text-[#263238] flex flex-row justify-center items-center leading-[49.6px] text-[32px] text-right">
@@ -16,7 +37,7 @@ const Login = () => {
         </div>
         <Formik
           initialValues={{
-            acceptedTerms: false,
+            acceptedTerms: true,
           }}
         >
           {({ values }) => (
@@ -45,7 +66,7 @@ const Login = () => {
                     <label htmlFor="show"> من را به خاطر بسپار </label>
                   </div>
                   <div>
-                    {/* <NavLink to="#">رمز عبور را فراموش کردم</NavLink> */}
+                    {/* <NavLink to="#" >رمز عبور را فراموش کردم</NavLink> */}
                     <a href="#" class="text-[#2196F3]">
                       رمز عبور را فراموش کردم
                     </a>
@@ -54,6 +75,10 @@ const Login = () => {
               </div>
               <div class="mt-[35px]">
                 <button
+                  onClick={() => {
+                    getProfileFunc()
+                    // loginUser()
+                  }}
                   type="submit"
                   class="m-[15px] w-[208px] h-[56px] bg-[#2196F3] text-[rgba(255,255,255,1)] rounded-[80px]
                     drop-shadow-[0_0_20px_rgba(0,0,0,0.2)]
@@ -74,7 +99,7 @@ const Login = () => {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
