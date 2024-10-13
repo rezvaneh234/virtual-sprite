@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import { setItem } from "../../common/storage.services";
 import { getProfile } from "../../../core/services/api/user/user";
 
-const Login = () => {
+const Login = () => {    
   const loginUser = async () => {
     const userObj = {
       phoneOrGmail: "masg1377@gmail.com",
