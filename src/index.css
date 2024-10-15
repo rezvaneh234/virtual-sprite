@@ -1,8 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: myYekan;
+  src: url("../src/assets/fonts/Yekan_Bakh_Fanum_Regular.TTF");
+}
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: myYekan;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,11 +30,15 @@ a:hover {
 }
 
 body {
+ background-color: #747bff;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+.dirAuth{
+  direction: rtl;
 }
 
 h1 {

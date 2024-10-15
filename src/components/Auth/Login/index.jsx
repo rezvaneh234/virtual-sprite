@@ -9,6 +9,7 @@ import { setItem } from "../../common/storage.services";
 import { getProfile } from "../../../core/services/api/user/user";
 
 const Login = () => {    
+<<<<<<< HEAD
   const loginUser = async (values) => {
     const userObj = {
       
@@ -20,6 +21,15 @@ const Login = () => {
     if(user.token){
       
     }
+=======
+  const loginUser = async () => {
+    const userObj = {
+      phoneOrGmail: "masg1377@gmail.com",
+      password: "123456",
+      rememberMe: true,
+    };
+    const user = await loginAPI(userObj);
+>>>>>>> af5ceba0b24620e71986f28c6410fd70fc5998d7
     console.log(user.token);
     setItem("token", user.token);
   };
@@ -43,9 +53,12 @@ const Login = () => {
           initialValues={{
             acceptedTerms: true
           }}
+<<<<<<< HEAD
           onSubmit={(values)=>{
             loginUser(values)
           }}
+=======
+>>>>>>> af5ceba0b24620e71986f28c6410fd70fc5998d7
         >
           {({ values }) => (
             <Form>
