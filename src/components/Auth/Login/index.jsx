@@ -1,6 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import RegisterFinish from "../Register/RegisterFinish";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -16,24 +14,19 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, MantineProvider, NavLink } from "@mantine/core";
 
 const Login = () => {
-
-  const navigate = useNavigate();
-  const goToNextPage = () => {
-    navigate("/landing");
-  };
-
   const loginUser = async (values) => {
     const userObj = {
       phoneOrGmail: values.emailMob,
       password: values.password,
       rememberMe: true,
     };
+
     
     const user = await loginAPI(userObj);
     if (user.token) {
       console.log(user.token);
       alert(user.message);
-      goToNextPage();
+      
     }
     else{
       alert(user.message)
@@ -52,8 +45,6 @@ const Login = () => {
     emailMob: Yup.string().required("*"), // پیام خطای فیلد خالی
     password: Yup.string().required("*"), // پیام خطای فیلد خالی
   });
-
-  
   return (
     <>
       <MantineProvider>
