@@ -20,11 +20,18 @@ const Login = () => {
       password: values.password,
       rememberMe: true,
     };
+
+    
     const user = await loginAPI(userObj);
     if (user.token) {
-      console.log('first')
+      console.log(user.token);
+      alert(user.message);
+      
     }
-    console.log(user.token);
+    else{
+      alert(user.message)
+    }
+    
     setItem("token", user.token);
   };
   const getProfileFunc = async () => {
@@ -45,6 +52,7 @@ const Login = () => {
           className="dirAuth"
           opened={opened}
           onClose={close}
+          withCloseButton={false}
           radius={24}
           // title="ورود به حساب"
           //  size="auto"
@@ -56,7 +64,10 @@ const Login = () => {
               <div class="text-[#263238] flex flex-row justify-center items-center leading-[49.6px] text-[32px] text-right">
                 ورود به حساب
               </div>
-              <div class="w-12 h-12 rounded-xl bg-slate-200 flex flex-row justify-center items-center">
+              <div class="w-12 h-12 rounded-xl bg-slate-200 flex flex-row justify-center items-center
+              cursor-pointer"
+              onClick={close} 
+              >
                 <img class="w-6 h-6" src={exit}></img>
               </div>
             </div>
