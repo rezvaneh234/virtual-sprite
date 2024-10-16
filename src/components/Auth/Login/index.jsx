@@ -22,6 +22,7 @@ const Login = () => {
     };
     const user = await loginAPI(userObj);
     if (user.token) {
+      console.log('first')
     }
     console.log(user.token);
     setItem("token", user.token);
