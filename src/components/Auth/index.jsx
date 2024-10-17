@@ -1,6 +1,9 @@
 import React from "react";
+import RegisterStep1 from "./Register/RegisterStep1";
+import RegisterStep2 from "./Register/RegisterStep2";
+import RegisterStep3 from "./Register/RegisterStep3";
 import Login from "./Login";
-import Register from "./Register";
+// import Register from "./Register";
 import RegisterFinish from "./Register/RegisterFinish";
 import SendSms from "./Register/SendSms";
 const Auth = () => {

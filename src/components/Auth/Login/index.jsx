@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import exit from "@assets/images/exit.png";
 import { useEffect } from "react";
 import { loginAPI } from "@core/services/api/auth/auth";
-import { Link } from 'react-router-dom'; // برای مسیریابی درون‌برنامه‌ای
+import { Link } from "react-router-dom"; // برای مسیریابی درون‌برنامه‌ای
 import { setItem } from "../../common/storage.services";
 import { getProfile } from "../../../core/services/api/user/user";
 import "@mantine/core/styles.css";
@@ -14,6 +14,10 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button, MantineProvider, NavLink } from "@mantine/core";
 
 const Login = () => {
+  const [opened, { open, close }] = useDisclosure(false);
+  const closeModalWithJS = () => {
+    close();
+  };
   const loginUser = async (values) => {
     const userObj = {
       phoneOrGmail: values.emailMob,
@@ -21,17 +25,14 @@ const Login = () => {
       rememberMe: true,
     };
 
-    
     const user = await loginAPI(userObj);
     if (user.token) {
       console.log(user.token);
+      closeModalWithJS();
+    } else {
       alert(user.message);
-      
     }
-    else{
-      alert(user.message)
-    }
-    
+
     setItem("token", user.token);
   };
   const getProfileFunc = async () => {
@@ -40,20 +41,23 @@ const Login = () => {
   };
   // useEffect(()=>{loginUser()},[])
 
-  const [opened, { open, close }] = useDisclosure(false);
   const validationSchema = Yup.object({
-    emailMob: Yup.string().required("*"), // پیام خطای فیلد خالی
-    password: Yup.string().required("*"), // پیام خطای فیلد خالی
+    emailMob: Yup.string().required("*"),
+    password: Yup.string().required("*"),
   });
   return (
-    <>
+    <div>
       <MantineProvider>
         <Modal
+          id="modal1"
           className="dirAuth"
           opened={opened}
           onClose={close}
           withCloseButton={false}
           radius={24}
+          styles={{
+            modal: { overflow: "hidden" },
+          }}
           // title="ورود به حساب"
           //  size="auto"
         >
@@ -64,9 +68,10 @@ const Login = () => {
               <div class="text-[#263238] flex flex-row justify-center items-center leading-[49.6px] text-[32px] text-right">
                 ورود به حساب
               </div>
-              <div class="w-12 h-12 rounded-xl bg-slate-200 flex flex-row justify-center items-center
+              <div
+                class="w-12 h-12 rounded-xl bg-slate-200 flex flex-row justify-center items-center
               cursor-pointer"
-              onClick={close} 
+                onClick={close}
               >
                 <img class="w-6 h-6" src={exit}></img>
               </div>
@@ -155,8 +160,6 @@ const Login = () => {
                   label="ثبت نام"
                   // component={Link} to="/"
                 />
-
-
               </div>
             </div>
           </div>
@@ -164,7 +167,7 @@ const Login = () => {
         </Modal>
         <Button onClick={open}>ورود</Button>
       </MantineProvider>
-    </>
+    </div>
   );
 };
 
